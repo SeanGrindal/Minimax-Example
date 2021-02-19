@@ -2,4 +2,4 @@
 
 Simple example of the minimax algorithm used to play tic tac toe
 
-[View the example live](https://seangrindal.github.io/Minimax-Example)
+<a href="https://seangrindal.github.io/Minimax-Example" target="_blank">View the example live</a>

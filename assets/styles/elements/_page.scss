@@ -6,3 +6,9 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+
+::selection {
+	background-color: $selection-background-color;
+	color: $selection-text-color;
+	text-shadow: none;
+}

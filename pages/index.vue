@@ -46,6 +46,12 @@ export default {}
 .next-link {
 	@extend %link;
 
+	color: rgb(162, 147, 248);
 	margin-top: 40px;
+	transition: opacity 240ms ease-out;
+
+	&:hover {
+		opacity: 0.6;
+	}
 }
 </style>

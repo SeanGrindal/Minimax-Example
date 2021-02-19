@@ -1,0 +1,24 @@
+@mixin first($num) {
+   @if $num == 1 {
+      &:first-child {
+         @content;
+      }
+   } @else {
+      &:nth-child(-n + #{$num}) {
+         @content;
+      }
+   }
+}
+
+@mixin last($num) {
+   &:nth-last-child(-n + #{$num}) {
+      @content;
+   }
+}
+
+@mixin u-hocus {
+   &:focus,
+   &:hover {
+       @content;
+   }
+}

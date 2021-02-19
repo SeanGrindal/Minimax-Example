@@ -1,0 +1,32 @@
+// ==========================================================================
+// SETTINGS | global variables injected into components 
+// ==========================================================================
+@import 'settings/config.template';
+@import 'settings/config.custom';
+
+
+
+// ==========================================================================
+// TOOLS | global functions and mixins injected into components 
+// ==========================================================================
+@import 'tools/functions';
+@import 'tools/utils';
+
+
+
+// ==========================================================================
+// GENERIC | normalizes elements across browsers and adds generic styles  
+// ==========================================================================
+@import 'generic/normalize';
+@import 'generic/generic';
+@import 'generic/form';
+@import 'generic/links';
+@import 'generic/button';
+
+
+
+// ==========================================================================
+// ELEMENTS | global styles existing outside Nuxt layouts 
+// ==========================================================================
+@import 'elements/page';
+@import 'elements/page-transitions';

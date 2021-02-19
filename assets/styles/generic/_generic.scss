@@ -1,0 +1,18 @@
+*,
+:before,
+:after {
+   -webkit-backface-visibility: hidden;
+   -webkit-box-sizing: border-box;
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   backface-visibility: hidden;
+   box-sizing: border-box;
+   outline: none;
+}
+
+address {
+   font-style: inherit;
+}
+
+i {
+   font-style: italic;
+}

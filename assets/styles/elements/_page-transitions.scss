@@ -1,0 +1,24 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 320ms;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.mobile-menu--open {
+  .page-leave-active, .layout-leave-active {
+    transition: opacity 0ms !important;
+  }
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 320ms;
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}

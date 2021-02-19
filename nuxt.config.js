@@ -1,6 +1,9 @@
 export default {
   ssr: false,
   target: 'static',
+  router: {
+    base: '/Minimax-Example/'
+  },
   head: {
     title: 'tic-tact-toe-ai',
     htmlAttrs: {
@@ -17,7 +20,6 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=block' },
     ]
   },
-
   modules: [
     '@nuxtjs/style-resources', 
   ],

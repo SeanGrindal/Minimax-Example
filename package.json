@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=master --cleanup"
+    "deploy": "push-dir --dir=dist --branch=deploy --cleanup"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

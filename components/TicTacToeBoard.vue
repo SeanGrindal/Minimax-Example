@@ -28,22 +28,31 @@
 				><span>Draws {{ draws }}</span
 				><span>Human wins {{ humanWins }}</span>
 			</div>
-
-			<div v-if="winner" class="winner-wrapper">
-				{{ winner == 'X' || winner == 'O' ? 'Winner: ' : '' }} {{ winner }}
-			</div>
 		</div>
 
-		<div class="hints-wrapper">
-			<label class="toggle-hints-wrapper">
-				<input type="checkbox" v-model="hints" />
-				Enable Hints When Hovering Square
-			</label>
-
-			<div class="outcome-checker" v-show="hints">
+		<div class="right-column">
+			<div class="winner-wrapper">
 				{{
-					outcome ? `Playing this square ${outcome}` : 'Hover over a square to show outcomes'
+					winner == 'X' || winner == 'O'
+						? `Winner: ${winner}`
+						: winner == 'draw'
+						? 'Draw'
+						: '. . .'
 				}}
+			</div>
+
+			<div class="hints-wrapper">
+				<label class="toggle-hints-wrapper">
+					<input type="checkbox" v-model="hints" />
+					Enable Hints When Hovering Square
+				</label>
+				<div class="outcome-checker" v-show="hints && gameStarted">
+					{{
+						outcome
+							? `Playing this square ${outcome}`
+							: 'Hover over a square to show outcomes'
+					}}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -262,7 +271,7 @@ export default {
 
 <style lang="scss" scoped>
 .tic-tact-toe-game {
-	align-items: center;
+	align-items: stretch;
 	display: flex;
 	justify-content: center;
 	left: 0;
@@ -271,15 +280,17 @@ export default {
 }
 
 .interface-wrapper {
-	max-width: 660px;
+	max-width: 620px;
 	width: 60%;
 }
 
-.hints-wrapper {
+.right-column {
 	padding-left: 40px;
 	width: 40%;
-	max-width: 330px;
+	max-width: 400px;
+}
 
+.hints-wrapper {
 	label {
 		align-items: center;
 		display: flex;
@@ -287,13 +298,17 @@ export default {
 	}
 
 	input {
-		height: 14px;
-		width: 14px;
+		height: 16px;
+		width: 16px;
+		margin: 0;
+		margin-bottom: 1px;
+		margin-right: 12px;
 	}
 
 	.outcome-checker {
+		margin-top: 20px;
+		line-height: 1.1;
 		font-size: rem(24px);
-		margin-top: 24px;
 	}
 }
 
@@ -302,8 +317,17 @@ export default {
 	justify-content: space-between;
 	margin-bottom: 40px;
 
-	button[disabled] {
-		opacity: 0.3;
+	button {
+		transition: color 120ms ease-out;
+
+		&:hover {
+			color: rgb(191, 181, 247);
+		}
+
+		&[disabled] {
+			cursor: initial;
+			opacity: 0.3;
+		}
 	}
 }
 
@@ -364,6 +388,6 @@ export default {
 	text-align: center;
 	font-size: rem(32px);
 	font-weight: 700;
-	margin-top: 40px;
+	margin-bottom: 40px;
 }
 </style>

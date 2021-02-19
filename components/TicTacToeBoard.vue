@@ -5,7 +5,7 @@
 				<button :disabled="gameStarted" @click="toggleFirstPlayer">
 					First Turn: {{ humanMove == 'X' ? 'You' : 'AI' }}
 				</button>
-				<button @click="toggleGame()">
+				<button @click="toggleGame()" class="start-button">
 					{{ this.gameStarted ? 'Restart' : 'Start' }}
 				</button>
 			</div>
@@ -81,7 +81,7 @@ export default {
 		draws: 0,
 		winner: null,
 		outcome: '',
-		hints: false
+		hints: true
 	}),
 	methods: {
 		toggleFirstPlayer() {
@@ -328,6 +328,14 @@ export default {
 			cursor: initial;
 			opacity: 0.3;
 		}
+	}
+
+	.start-button {
+		padding: 8px 24px;
+		margin: -8px 0;
+		border: 2px solid rgba(rgb(191, 181, 247), 0.6);
+		border-radius: 4px;
+		color: rgb(102, 77, 248);
 	}
 }
 

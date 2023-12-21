@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .game-wrapper {
-	padding: 64px 24px;
+	padding: 24px;
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
